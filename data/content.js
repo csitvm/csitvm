@@ -10,6 +10,7 @@ window.CSI_CONTENT = {
   ],
   /* Newest first */
   newsletters: [
+    { title: "Jun 2023 – May 2024", file: "assets/docs/newsletter-2024.pdf" },
     { title: "May – Jul 2021", file: "assets/docs/newsletter-2021-may-jul.pdf" },
     { title: "Jan – Mar 2021", file: "assets/docs/newsletter-2021-jan-mar.pdf" },
     { title: "Oct – Dec 2020", file: "assets/docs/newsletter-2020-oct-dec.pdf" }

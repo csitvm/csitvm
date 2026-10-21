@@ -1,7 +1,8 @@
-/* Roll of Honour: past chapter office bearers, 1976-77 to 2020-21.
-   Source: csitvm.org/images/office_bearers.pdf (archive.org snapshot of 2025-03-30), transcribed.
+/* Roll of Honour: chapter office bearers, 1976-77 to 2025-26.
+   Sources: csitvm.org/images/office_bearers.pdf (archive.org snapshot of 2025-03-30) for 1976-77 to 2020-21;
+   the chapter's "DRAFT Roll.pdf" for 2021-22 to 2025-26 (the draft has no Editor column, so those cells are blank).
    Names are as in the source with spacing normalised; "" means the source cell is blank.
-   TO ADD: office bearers from 2021-22 onwards (not in the source). Add a new object at the END of the list.
+   TO ADD A NEW YEAR: add a row at the END of the list, then update CSI_CURRENT_COMMITTEE below.
    Columns: year, chairman, viceChairman, secretary, treasurer, editor. */
 window.CSI_OFFICE_BEARERS = [
   ["1976-1977","Dr. D.S. Rane","Prof. S. Narayana Iyer","Mr. K. Thanappan Nair","Mr. K. Thanappan Nair","Prof. S. Hariharan"],
@@ -44,5 +45,21 @@ window.CSI_OFFICE_BEARERS = [
   ["2017-2018","Dr. Vishukumar S.","Mr. Sunilkumar I.N.","Mr. Basanth Kumar B.S.","Mr. Rajesh P.",""],
   ["2018-2019","Mr. Sunilkumar I.N.","Dr. Sabarish K.","Mr. Aswin P. Chandran","Ms. Anita Nair",""],
   ["2019-2020","Dr. Sabarish K.","Dr. Achuthsankar S Nair","Mr. Aswin P. Chandran","Ms. Anita Nair",""],
-  ["2020-2021","Dr. Achuthsankar S Nair","Mr. Sreekanth P. Krishnan","Ms. Anita Nair","Mr. Mahesh Ravindran","Dr. Achuthsankar S Nair"]
+  ["2020-2021","Dr. Achuthsankar S Nair","Mr. Sreekanth P. Krishnan","Ms. Anita Nair","Mr. Mahesh Ravindran","Dr. Achuthsankar S Nair"],
+  ["2021-2022","Prof. (Dr.) Elizabeth Sherly","","Ms. Lekshmi Preethi Mony","Mr. Justin Russel",""],
+  ["2022-2023","Prof. (Dr.) Elizabeth Sherly","Mr. Rajesh P.","Ms. Lekshmi Preethi Mony","Mr. Justin Russel",""],
+  ["2023-2024","Prof. (Dr.) Sasikumaran S.","Mr. Rajesh P.","Ms. Lekshmi Preethi Mony","Mr. Justin Russel","Dr. Elizabeth Jacob"],
+  ["2024-2025","Prof. (Dr.) Sasikumaran S.","Mr. Rajesh P.","Mr. Sajeendran S.","Mr. Justin Russel","Dr. Elizabeth Jacob"],
+  ["2025-2026","Mr. Aju Thomas Abraham","Mr. Rajesh P.","Mr. Basanth Kumar B.S.","Mr. Jiju John Luke",""]
 ];
+
+/* Shown in the "Current committee" section of office-bearers.html. Keep in step with the last row above. */
+window.CSI_CURRENT_COMMITTEE = {
+  term: "2025-2026",
+  members: [
+    { role: "Chairman", name: "Mr. Aju Thomas Abraham" },
+    { role: "Vice Chairman", name: "Mr. Rajesh P." },
+    { role: "Secretary", name: "Mr. Basanth Kumar B.S." },
+    { role: "Treasurer", name: "Mr. Jiju John Luke" }
+  ]
+};

@@ -132,12 +132,19 @@
           return '<li><a href="' + esc(safe(s.href)) + '"' + ext(s.href) + ">" + esc(s.label) + "</a></li>";
         }).join("") + "</ul></div>";
     },
+    "current-committee": function (el) {
+      var cc = window.CSI_CURRENT_COMMITTEE;
+      if (!cc) { el.innerHTML = '<p class="empty">The current committee will be published here.</p>'; return; }
+      el.innerHTML = '<p class="lead">Term ' + esc(cc.term) + '</p><div class="grid">' + cc.members.map(function (m) {
+        return '<div class="card"><span class="pill">' + esc(m.role) + '</span><h3 class="mt-12">' + esc(m.name) + '</h3></div>';
+      }).join("") + "</div>";
+    },
     "office-bearers": function (el) {
       var rows = (window.CSI_OFFICE_BEARERS || []).slice().reverse(); /* newest first */
       el.innerHTML =
-        '<label class="lbl" for="ob-q">Search by name or year</label>' +
-        '<input class="find" id="ob-q" type="search" placeholder="For example: Satish Babu or 1992" autocomplete="off">' +
-        '<p class="lead" id="ob-count" role="status"></p>' +
+        '<div class="toolbar"><div class="search"><label class="lbl" for="ob-q">Search by name or year</label>' +
+        '<input class="find" id="ob-q" type="search" placeholder="For example: Satish Babu or 1992" autocomplete="off"></div>' +
+        '<p class="count" id="ob-count" role="status"></p></div>' +
         '<div class="tbl"><table><caption class="tbl-cap">Chapter office bearers by year, newest first</caption><thead><tr><th scope="col">Year</th><th scope="col">Chairman</th><th scope="col">Vice Chairman</th><th scope="col">Secretary</th><th scope="col">Treasurer</th><th scope="col">Editor</th></tr></thead><tbody id="ob-body"></tbody></table></div>';
       var q = doc.getElementById("ob-q"), body = doc.getElementById("ob-body"), count = doc.getElementById("ob-count");
       function draw() {

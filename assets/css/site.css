@@ -141,3 +141,15 @@ footer.site{margin-top:72px;background:var(--card);border-top:1px solid var(--li
 /* Utility classes (replace inline styles so the Content-Security-Policy can forbid them) */
 .mt-12{margin-top:12px}.mt-16{margin-top:16px}.mt-24{margin-top:24px}.mb-12{margin-bottom:12px}
 .tbl-cap{text-align:left;padding:12px 16px 0;caption-side:top;color:var(--muted);margin:0}
+
+/* Search row above the roll of honour: search box on the left, result count on the right, full width */
+.toolbar{display:flex;justify-content:space-between;align-items:flex-end;gap:12px 24px;flex-wrap:wrap;margin-bottom:16px}
+.toolbar .find{margin-bottom:0}
+.toolbar .count{margin:0;color:var(--muted)}
+.toolbar .search{flex:1 1 320px;max-width:420px}
+
+/* Full-width call-to-action card: text fills the width, button sits at the right (stacks on small screens) */
+.banner{display:flex;align-items:center;justify-content:space-between;gap:20px 40px;flex-wrap:wrap;padding:clamp(20px,2.5vw,36px)}
+.banner > div{flex:1 1 480px}
+.banner p{color:var(--ink);margin:8px 0 0}
+.banner .btn{flex:0 0 auto}

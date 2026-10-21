@@ -1,0 +1,48 @@
+/* Roll of Honour: past chapter office bearers, 1976-77 to 2020-21.
+   Source: csitvm.org/images/office_bearers.pdf (archive.org snapshot of 2025-03-30), transcribed.
+   Names are as in the source with spacing normalised; "" means the source cell is blank.
+   TO ADD: office bearers from 2021-22 onwards (not in the source). Add a new object at the END of the list.
+   Columns: year, chairman, viceChairman, secretary, treasurer, editor. */
+window.CSI_OFFICE_BEARERS = [
+  ["1976-1977","Dr. D.S. Rane","Prof. S. Narayana Iyer","Mr. K. Thanappan Nair","Mr. K. Thanappan Nair","Prof. S. Hariharan"],
+  ["1977-1978","Prof. S. Narayana Iyer","Mr. R. Narayanan","Mr. K. Thanappan Nair","Mr. T.R. Gopalakrishnan","Prof. S. Hariharan"],
+  ["1978-1979","Mr. R. Narayanan","Mr. M.R. Krishna","Mr. A.K. Pujari","Mr. K.M. Narayanan",""],
+  ["1979-1980","Mr. S.M.V. Bhat","Mr. J.T. George","Mr. A.K. Pujari","Dr. R. Sankaran","Mr. K.M. Narayanan"],
+  ["1980-1981","Mr. J.T. George","Mr. K. Thanappan Nair","Mr. N. Thankappan Nair","Dr. R. Sankaran","Mr. Gopalakrishnan"],
+  ["1981-1982","Mr. N. Thankappan Nair","Dr. N. Ramachandra Rao","Mr. P.M. John","Mr. M.P. Kochunarayanan","Mr. N. Gopalakrishnan"],
+  ["1982-1983","Dr. N. Ramachandra Rao","Mr. R.P.C. Nair","Mr. R. Sahadevan","Dr. C.G. Sukumaran Nair","Mr. A. Leon Mohanraj"],
+  ["1983-1984","Dr. V.P. Bhatkar","Dr. K.A. Muraleedharan","Mr. R. Sahadevan","Dr. C.G. Sukumaran Nair","Mr. A. Leon Mohanraj"],
+  ["1984-1985","Dr. K.A. Muraleedharan","Dr. S.N.S. Rajasekharan","Mr. A. Leon Mohanraj","Mr. V. Rajagopal","Dr. C.G. Sukumaran Nair"],
+  ["1985-1986","Dr. S.N.S. Rajasekharan","Mr. A.K. Pujari","Dr. C.G. Sukumaran Nair","Mr. N.R. Chandran","Mr. K.C. Vijayakumar"],
+  ["1986-1987","Mr. K. Thanappan Nair","Mr. R. Sahadevan","Dr. C.G. Sukumaran Nair","Mr. N.R. Chandran","Mr. B. D'Silva"],
+  ["1987-1988","Mr. K. Thanappan Nair","Mr. R. Sahadevan","Mr. A. Leon Mohanraj","Mr. A. Karunambaran","Dr. C.G. Sukumaran Nair"],
+  ["1988-1990","Prof. R. Sahadevan","Mr. A. Leon Mohanraj","Mr. Shibu Philip","Mr. B. Gopi","Dr. C.G. Sukumaran Nair"],
+  ["1990-1991","Mr. A. Leon Mohanraj","Dr. C.G. Sukumaran Nair","Mr. B. Gopi","Mr. Shibu Philip","Mr. P. Sugathakumar"],
+  ["1991-1992","Mr. A. Leon Mohanraj","Dr. C.G. Sukumaran Nair","Mr. B. Gopi","Mr. K. Gopalan Nair","Mr. Amarnath Raja"],
+  ["1992-1993","Dr. C.G. Sukumaran Nair","Dr. A.K. Pujari","Mr. Amarnath Raja","Mr. K. Gopalan Nair","Mr. Satish Babu"],
+  ["1993-1994","Dr. C.G. Sukumaran Nair","Dr. A.K. Pujari","Mr. Amarnath Raja","Mr. S. Krishnankutty","Mr. Satish Babu"],
+  ["1994-1996","Dr. A.K. Pujari","Mr. Amarnath Raja","Mr. Satish Babu","Mr. S. Krishnankutty","Mr. C. Uthayakumar"],
+  ["1996-1997","Prof. K.T. Nair","Mr. Satish Babu","Prof. R. Venkitakrishna Iyer","Mr. Jayalal",""],
+  ["1997-1998","Mr. Amarnath Raja","Mr. Satish Babu","Prof. R. Venkitakrishna Iyer","Mr. Padmanabhan","Mr. Jayalal"],
+  ["1998-2000","Mr. Satish Babu","Prof. R. Venkitakrishna Iyer","Prof. Krishnan Kutty S","Mr. Padmanabhan (1998-99) / Mr. Neelakantan G (1999-2000)","Ms. Valsa B"],
+  ["2000-2002","Prof. R. Venkitakrishna Iyer","Dr. Sakunthala S Pillai","Mr. Neelakantan G","Mr. Madhusoodanan Nair S","Mr. B. Gopi"],
+  ["2002-2003","Mr. Amarnath Raja","Ms. Valsa B","Mr. Madhusoodanan Nair S","Mr. G. Alexander","Mr. P.T. Suresh Kumar"],
+  ["2003-2004","Prof. Krishnan Kutty S","Ms. Valsa B","Mr. Madhusoodanan Nair S","Mr. G. Alexander","Mr. R. Srinivasan"],
+  ["2004-2005","Prof. S. Krishnan Kutty","Mr. G. Neelakantan","Mr. M.C. Jayakrishnan","Mr. R. Muraleedharan Pillai","Mr. Mahendra Murali L.G."],
+  ["2005-2006","Ms. B. Valsa","Mr. G. Neelakantan","Mr. M.C. Jayakrishnan","Mr. R. Muraleedharan Pillai","Mr. Mahendra Murali L.G."],
+  ["2006-2007","Mr. G. Neelakantan","Mr. M.C. Jayakrishnan","Mr. R. Muraleedharan Pillai","Mr. Biju B. Varghese",""],
+  ["2007-2008","Mr. M.C. Jayakrishnan","Mr. R. Muraleedharan Pillai","Mr. R. Srinivasan","Prof. J. Prakash Francis",""],
+  ["2008-2009","Mr. R. Muraleedharan Pillai","Mr. S. Madhusoodanan Nair","Mr. R. Srinivasan","Prof. J. Prakash Francis",""],
+  ["2009-2010","Mr. R. Srinivasan","Mr. Brajesh C","Mr. Aju Thomas","Mr. Benanson D'Silva",""],
+  ["2010-2011","Mr. Brajesh C","Mr. S. Madhusoodanan Nair","Mr. Biju B. Varghese","Mr. R. Benanson D'Silva",""],
+  ["2011-2012","Mr. S. Madhusoodanan Nair","Mr. R. Benanson D'Silva","Mr. Biju B. Varghese","Mr. Sunilkumar I.N.",""],
+  ["2012-2013","Mr. Biju B. Varghese","Mrs. M. Jayalakshmi","Prof. Babu K","Mr. Vishnukumar S.",""],
+  ["2013-2014","Mrs. M. Jayalakshmi","Mr. Ramachandran K.","Prof. Babu K","Mr. Vishnukumar S.",""],
+  ["2014-2015","Mr. G. Neelakantan","Mr. Sreekanth P. Krishnan","Mr. Vishnukumar S.","Mr. G. Sudhakaran",""],
+  ["2015-2016","Mr. Sreekanth P. Krishnan","Prof. Babu K","Mr. Vishnukumar S.","Mr. G. Sudhakaran",""],
+  ["2016-2017","Prof. Babu K.","Dr. Vishnukumar S.","Mr. Basanth Kumar B.S.","Mr. Rajesh P.",""],
+  ["2017-2018","Dr. Vishukumar S.","Mr. Sunilkumar I.N.","Mr. Basanth Kumar B.S.","Mr. Rajesh P.",""],
+  ["2018-2019","Mr. Sunilkumar I.N.","Dr. Sabarish K.","Mr. Aswin P. Chandran","Ms. Anita Nair",""],
+  ["2019-2020","Dr. Sabarish K.","Dr. Achuthsankar S Nair","Mr. Aswin P. Chandran","Ms. Anita Nair",""],
+  ["2020-2021","Dr. Achuthsankar S Nair","Mr. Sreekanth P. Krishnan","Ms. Anita Nair","Mr. Mahesh Ravindran","Dr. Achuthsankar S Nair"]
+];

@@ -153,3 +153,6 @@ footer.site{margin-top:72px;background:var(--card);border-top:1px solid var(--li
 .banner > div{flex:1 1 480px}
 .banner p{color:var(--ink);margin:8px 0 0}
 .banner .btn{flex:0 0 auto}
+
+/* Portrait flyers in the home hero: keep them from becoming taller than the screen */
+.hero .pic img{max-height:min(78vh,720px);width:auto;max-width:100%;margin-left:auto;margin-right:auto}

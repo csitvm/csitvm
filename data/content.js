@@ -40,6 +40,14 @@ window.CSI_CONTENT = {
       alt: "Flyer for the Computer Society of India orientation class at John Cox Memorial CSI Institute of Technology on Saturday, 26 September, 11:30 AM to 12:30 PM, with Rajesh P and Basanth Kumar B S as speakers.",
     },
     {
+      title: "Future Forward, Episode 03: Agentic AI",
+      date: "22 August 2026, 7:00 PM to 8:00 PM, Online (Google Meet)",
+      tags: ["Online", "Student talks"],
+      text: "The Student Activity Council of the CSI Trivandrum Chapter presented Future Forward, a student-led technical talk series that connects emerging technologies with practical development. Episode 03 explored Agentic AI and how autonomous AI agents are changing the way we build, automate and interact with intelligent systems. Resource person: Ms. Dharshana Senthilkumar, Student, Department of Computer Science and Engineering, Amrita School of Computing, Amrita Vishwa Vidyapeetham, Nagercoil.",
+      image: "assets/img/amrita-1.jpeg",
+      alt: "Poster for Future Forward Episode 03: Agentic AI, presented by CSI Trivandrum Chapter on 22 August 2026, 7 to 8 PM, online on Google Meet, with Ms. Dharshana Senthilkumar as resource person."
+    },
+    {
       title: "National Student Tech Talk Series, Session 06",
       date: "6 May 2021, Thursday, 6 PM IST",
       tags: ["Online", "Student talks"],

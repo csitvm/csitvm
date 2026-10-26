@@ -24,6 +24,22 @@ window.CSI_CONTENT = {
   /* Past events with posters recovered from the old site. Newest first. */
   events: [
     {
+      title: "Let CSI Power Your IT Dreams, Christ Nagar College",
+      date: "16 October 2026, 9:00 AM, Chavara Chamber, Christ Nagar College, Maranalloor",
+      tags: ["In person", "College talk"],
+      text: "A session for students at Christ Nagar College, organised by the PG Department of Computer Science in association with IQAC. The resource person was Mr. Rajesh P., Vice Chairman of the CSI Trivandrum Chapter. Coordinator: Dr. Arathi Chandran R. I.",
+      image: "assets/img/christ-1.jpeg",
+      alt: "Flyer for the session 'Let CSI Power Your IT Dreams' at Christ Nagar College on 16 October 2026, with Mr. Rajesh P., Vice Chairman, CSI Trivandrum Chapter, as resource person.",
+    },
+    {
+      title: "CSI Orientation Class, John Cox Memorial CSI Institute of Technology",
+      date: "26 September 2026, 11:30 AM to 12:30 PM, College Seminar Hall, Kannammoola",
+      tags: ["In person", "Orientation"],
+      text: "An orientation class introducing CSI to students of John Cox Memorial CSI Institute of Technology, Kannammoola, to meet the team and explore opportunities. The speakers were Mr. Rajesh P., Vice Chairman, and Mr. Basanth Kumar B.S., Secretary, of the CSI Trivandrum Chapter.",
+      image: "assets/img/john-1.jpeg",
+      alt: "Flyer for the Computer Society of India orientation class at John Cox Memorial CSI Institute of Technology on Saturday, 26 September, 11:30 AM to 12:30 PM, with Rajesh P and Basanth Kumar B S as speakers.",
+    },
+    {
       title: "National Student Tech Talk Series, Session 06",
       date: "6 May 2021, Thursday, 6 PM IST",
       tags: ["Online", "Student talks"],

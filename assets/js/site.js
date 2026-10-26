@@ -89,7 +89,11 @@
   /* ---------- Data-driven blocks ---------- */
   function eventCard(ev) {
     return '<article class="card"><figure class="figure"><img src="' + esc(safe(ev.image)) + '" alt="' + esc(ev.alt) + '" loading="lazy">' +
-      "</figure><h3 class=\"mt-12\">" + esc(ev.title) + "</h3><p><b>" + esc(ev.date) + "</b></p>" +
+      "</figure>" +
+      /* Optional second picture (e.g. a photo of the session): set image2, alt2 and caption2 in data/content.js */
+      (ev.image2 ? '<figure class="figure mt-12"><img src="' + esc(safe(ev.image2)) + '" alt="' + esc(ev.alt2) + '" loading="lazy">' +
+        (ev.caption2 ? "<figcaption>" + esc(ev.caption2) + "</figcaption>" : "") + "</figure>" : "") +
+      "<h3 class=\"mt-12\">" + esc(ev.title) + "</h3><p><b>" + esc(ev.date) + "</b></p>" +
       '<div class="pills">' + (ev.tags || []).map(function (t) { return '<span class="pill">' + esc(t) + "</span>"; }).join("") + "</div>" +
       "<p>" + esc(ev.text) + "</p></article>";
   }

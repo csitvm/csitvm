@@ -69,7 +69,13 @@ window.CSI_CONTENT = {
     { college: "Government Engineering College, Barton Hill", href: "https://csigecbh.in" },
     { college: "Mar Baselios College of Engineering and Technology", href: "https://csi-sb-mbcet.vercel.app" },
     { college: "Amrita Vishwa Vidyapeetham, Nagercoil Campus", href: "https://www.amrita.edu/campus/nagercoil/professional-society-student-clubs/csi-student-chapter/", note: "CSI Student Chapter page on the Amrita website" },
-    { college: "College of Engineering, Perumon", href: "https://www.perumonec.ac.in/pages/facilities/professional-bodies.php", note: "Professional bodies page on the college website" }
+    { college: "College of Engineering, Perumon", href: "https://www.perumonec.ac.in/pages/facilities/professional-bodies.php", note: "Professional bodies page on the college website" },
+    { college: "Rajadhani Institute of Engineering and Technology", href: "https://www.riet.net.in/csi" },
+    { college: "SCT College of Engineering", href: "https://www.sctce.ac.in/csi-cs.php", note: "CSI page on the college website" },
+    /* No href yet: the tile is shown without a link. Add href: "https://..." when the chapter's website is known. */
+    { college: "John Cox Memorial CSI Institute of Technology" },
+    { college: "Lourdes Matha College of Science and Technology" },
+    { college: "College of Engineering, Muttathara" }
   ],
   awards: [
     { title: "CSI-InApp Award", text: "An award programme linked from the old chapter website.", href: "https://csiawards.inapp.in/" }

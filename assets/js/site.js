@@ -126,12 +126,12 @@
       el.innerHTML = (DATA.studentChapters || []).map(function (s) {
         /* No website known yet: show the college as a plain tile without a link */
         if (!s.href) {
-          return '<div class="card"><span class="pill">CSI Student Chapter</span><h3 class="mt-12">' + esc(s.college) + "</h3>" +
+          return '<div class="card"><span class="pill">' + esc(s.label || "CSI Student Chapter") + '</span><h3 class="mt-12">' + esc(s.college) + "</h3>" +
             '<p class="empty">' + esc(s.note || "Website not listed yet") + "</p></div>";
         }
         var host = String(s.href).replace(/^https?:\/\//i, "").split("/")[0];
-        return '<a class="card link" href="' + esc(safe(s.href)) + '"' + ext(s.href) + ' aria-label="' + esc(s.college) + ' student chapter website (opens in a new tab)">' +
-          '<span class="pill">CSI Student Chapter</span><h3 class="mt-12">' + esc(s.college) + "</h3>" +
+        return '<a class="card link" href="' + esc(safe(s.href)) + '"' + ext(s.href) + ' aria-label="' + esc(s.college) + ' website (opens in a new tab)">' +
+          '<span class="pill">' + esc(s.label || "CSI Student Chapter") + '</span><h3 class="mt-12">' + esc(s.college) + "</h3>" +
           "<p>" + esc(s.note || host) + '</p><span class="go">Visit website →</span></a>';
       }).join("");
     },

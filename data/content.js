@@ -72,6 +72,7 @@ window.CSI_CONTENT = {
     { college: "College of Engineering, Perumon", href: "https://www.perumonec.ac.in/pages/facilities/professional-bodies.php", note: "Professional bodies page on the college website" },
     { college: "Rajadhani Institute of Engineering and Technology", href: "https://www.riet.net.in/csi" },
     { college: "SCT College of Engineering", href: "https://www.sctce.ac.in/csi-cs.php", note: "CSI page on the college website" },
+    { college: "UKF College of Engineering and Technology", href: "https://www.ukfcet.ac.in/csi.php", note: "CSI page on the college website" },
     /* No href yet: the tile is shown without a link. Add href: "https://..." when the chapter's website is known. */
     { college: "John Cox Memorial CSI Institute of Technology" },
     { college: "Lourdes Matha College of Science and Technology" },

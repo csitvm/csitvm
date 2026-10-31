@@ -64,6 +64,13 @@ window.CSI_CONTENT = {
       alt: "Poster for the SAC Student Council 2021-2022 Kick Off Ceremony, with the chief guest, agenda and student chairs."
     }
   ],
+  /* CSI student chapters in colleges. To add a tile, copy a line and edit it. href must be https:// */
+  studentChapters: [
+    { college: "Government Engineering College, Barton Hill", href: "https://csigecbh.in" },
+    { college: "Mar Baselios College of Engineering and Technology", href: "https://csi-sb-mbcet.vercel.app" },
+    { college: "Amrita Vishwa Vidyapeetham, Nagercoil Campus", href: "https://www.amrita.edu/campus/nagercoil/professional-society-student-clubs/csi-student-chapter/", note: "CSI Student Chapter page on the Amrita website" },
+    { college: "College of Engineering, Perumon", href: "https://www.perumonec.ac.in/pages/facilities/professional-bodies.php", note: "Professional bodies page on the college website" }
+  ],
   awards: [
     { title: "CSI-InApp Award", text: "An award programme linked from the old chapter website.", href: "https://csiawards.inapp.in/" }
   ]

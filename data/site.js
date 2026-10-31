@@ -11,9 +11,9 @@ window.CSI_SITE = {
     { label: "Membership", href: "membership.html" },
     { label: "Office Bearers", href: "office-bearers.html" },
     { label: "Events", href: "events.html" },
+    { label: "Student Chapters", href: "student-chapters.html" },
     { label: "Publications", href: "publications.html" },
-    { label: "Awards", href: "awards.html" },
-    { label: "Contact", href: "contact.html" }
+    { label: "Awards", href: "awards.html" }
   ],
   contact: {
     addressLines: ["Symphony, T.C. 82/5426, 1st Floor", "Cherian's Square, Ambujavilasam Road", "Pulimood, Thiruvananthapuram", "Kerala, PIN 695 001"],

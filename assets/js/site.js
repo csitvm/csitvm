@@ -61,7 +61,8 @@
       '<footer class="site"><div class="wrap foot">' +
       "<div><h3>" + esc(SITE.name) + "</h3><p>" + (c.addressLines || []).map(esc).join("<br>") + "</p></div>" +
       "<div><h3>Contact</h3><ul><li>Phone: <a href=\"tel:" + esc(c.phone) + '">' + esc(c.phone) + "</a></li>" +
-      '<li>Email: <a href="mailto:' + esc(c.email) + '">' + esc(c.email) + "</a></li></ul></div>" +
+      '<li>Email: <a href="mailto:' + esc(c.email) + '">' + esc(c.email) + "</a></li>" +
+      '<li><a href="' + R + 'contact.html">Contact page and directions</a></li></ul></div>' +
       "<div><h3>Follow</h3>" + list(SITE.social) + "</div>" +
       "<div><h3>Related sites</h3>" + list(SITE.related) + "</div></div>" +
       '<div class="wrap legal">© ' + new Date().getFullYear() + " " + esc(SITE.name) + ".</div></footer>";
@@ -118,6 +119,15 @@
           ? "<ul>" + s.items.map(function (i) { return "<li>" + esc(i) + "</li>"; }).join("") + "</ul>"
           : '<p class="empty">No entries have been published yet.</p>';
         return '<div class="card"><h3>' + esc(s.title) + "</h3>" + body + "</div>";
+      }).join("");
+    },
+    "student-chapters": function (el) {
+      el.className = "grid fit";
+      el.innerHTML = (DATA.studentChapters || []).map(function (s) {
+        var host = String(s.href).replace(/^https?:\/\//i, "").split("/")[0];
+        return '<a class="card link" href="' + esc(safe(s.href)) + '"' + ext(s.href) + ' aria-label="' + esc(s.college) + ' student chapter website (opens in a new tab)">' +
+          '<span class="pill">CSI Student Chapter</span><h3 class="mt-12">' + esc(s.college) + "</h3>" +
+          "<p>" + esc(s.note || host) + '</p><span class="go">Visit website →</span></a>';
       }).join("");
     },
     awards: function (el) {

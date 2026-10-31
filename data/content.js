@@ -76,7 +76,9 @@ window.CSI_CONTENT = {
     /* No href yet: the tile is shown without a link. Add href: "https://..." when the chapter's website is known. */
     { college: "John Cox Memorial CSI Institute of Technology" },
     { college: "Lourdes Matha College of Science and Technology" },
-    { college: "College of Engineering, Muttathara" }
+    { college: "College of Engineering, Muttathara" },
+    /* label overrides the first line of the tile (default: "CSI Student Chapter") */
+    { college: "Christ Nagar College, Maranalloor, Thiruvananthapuram", label: "CSI Institutional Member" }
   ],
   awards: [
     { title: "CSI-InApp Award", text: "An award programme linked from the old chapter website.", href: "https://csiawards.inapp.in/" }

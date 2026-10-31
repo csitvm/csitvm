@@ -6,7 +6,7 @@ Static site for the Computer Society of India, Trivandrum Chapter. Plain HTML, C
 
 ```
 index.html, about.html, membership.html, office-bearers.html,
-chapter-election.html, events.html, publications.html, awards.html,
+chapter-election.html, events.html, student-chapters.html, publications.html, awards.html,
 contact.html, 404.html        Pages (root page is index.html)
 assets/css/site.css           All styling; colours and spacing are tokens at the top
 assets/js/theme-init.js       Sets the saved theme before first paint (light is default)
@@ -24,6 +24,7 @@ CLAUDE.md                     Notes for future editing sessions
 | To do this | Edit |
 | --- | --- |
 | Change address, phone, email, social links, footer links, menu items | `data/site.js` |
+| Add a student chapter tile | `data/content.js`, `studentChapters` list |
 | Add an event | `data/content.js`, `events` list (add the poster to `assets/img`) |
 | Add a newsletter or form | `data/content.js`, `newsletters` or `forms` list (add the PDF to `assets/docs`) |
 | Add office bearers for a new year | `data/office-bearers.js`, add a row at the END |

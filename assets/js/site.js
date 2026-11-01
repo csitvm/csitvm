@@ -88,15 +88,87 @@
   }
 
   /* ---------- Data-driven blocks ---------- */
+  /* Responsive picture. Image files are named <base>-<width>.avif and <base>-<width>.webp (see CLAUDE.md, "Images").
+     Browsers pick the smallest suitable file; AVIF first, WebP as the fallback. */
+  function pic(base, widths, w, h, alt, sizes) {
+    var set = function (fmt) {
+      return widths.map(function (x) { return esc(safe(base)) + "-" + x + "." + fmt + " " + x + "w"; }).join(", ");
+    };
+    var mid = widths[Math.min(1, widths.length - 1)];
+    return '<picture><source type="image/avif" srcset="' + set("avif") + '" sizes="' + esc(sizes) + '">' +
+      '<source type="image/webp" srcset="' + set("webp") + '" sizes="' + esc(sizes) + '">' +
+      '<img src="' + esc(safe(base)) + "-" + mid + '.webp" width="' + w + '" height="' + h + '" alt="' + esc(alt) + '" loading="lazy" decoding="async"></picture>';
+  }
   function eventCard(ev) {
-    return '<article class="card"><figure class="figure"><img src="' + esc(safe(ev.image)) + '" alt="' + esc(ev.alt) + '" loading="lazy">' +
-      "</figure>" +
-      /* Optional second picture (e.g. a photo of the session): set image2, alt2 and caption2 in data/content.js */
-      (ev.image2 ? '<figure class="figure mt-12"><img src="' + esc(safe(ev.image2)) + '" alt="' + esc(ev.alt2) + '" loading="lazy">' +
-        (ev.caption2 ? "<figcaption>" + esc(ev.caption2) + "</figcaption>" : "") + "</figure>" : "") +
-      "<h3 class=\"mt-12\">" + esc(ev.title) + "</h3><p><b>" + esc(ev.date) + "</b></p>" +
+    var widths = ev.widths || [800], full = widths[widths.length - 1];
+    return '<article class="card event"><div class="ev-layout">' +
+      '<div class="ev-media"><button type="button" class="zoom" data-zoom data-full="' + esc(safe(ev.image)) + "-" + full + '.webp" aria-label="Enlarge flyer: ' + esc(ev.title) + '">' +
+      pic(ev.image, widths, ev.w, ev.h, ev.alt, "(min-width: 700px) 440px, 92vw") + "</button></div>" +
+      '<div class="ev-body"><h3>' + esc(ev.title) + "</h3><p><b>" + esc(ev.date) + "</b></p>" +
       '<div class="pills">' + (ev.tags || []).map(function (t) { return '<span class="pill">' + esc(t) + "</span>"; }).join("") + "</div>" +
-      "<p>" + esc(ev.text) + "</p></article>";
+      "<p>" + esc(ev.text) + "</p></div></div></article>";
+  }
+
+  /* ---------- Structured data (JSON-LD) for events ---------- */
+  function eventJsonLd(ev) {
+    var base = String(SITE.url || "").replace(/\/$/, "");
+    var full = (ev.widths || [800])[(ev.widths || [800]).length - 1];
+    var o = {
+      "@type": "Event",
+      name: ev.title,
+      startDate: ev.start,
+      eventStatus: "https://schema.org/EventScheduled",
+      description: ev.text,
+      image: [base + "/" + ev.image + "-" + full + ".webp"],
+      organizer: { "@type": "Organization", name: SITE.name, url: base + "/" }
+    };
+    if (ev.end) o.endDate = ev.end;
+    if (ev.mode === "online") {
+      o.eventAttendanceMode = "https://schema.org/OnlineEventAttendanceMode";
+      o.location = { "@type": "VirtualLocation", url: base + "/events.html" };
+    } else {
+      o.eventAttendanceMode = "https://schema.org/OfflineEventAttendanceMode";
+      o.location = { "@type": "Place", name: ev.venue && ev.venue.name,
+        address: { "@type": "PostalAddress", addressLocality: ev.venue && ev.venue.locality, addressRegion: "Kerala", addressCountry: "IN" } };
+    }
+    return o;
+  }
+  /* Added as a data block: it is never executed, so the Content-Security-Policy does not apply to it. */
+  function addJsonLd(obj) {
+    var s = doc.createElement("script");
+    s.type = "application/ld+json";
+    s.textContent = JSON.stringify(obj);
+    doc.head.appendChild(s);
+  }
+
+  /* ---------- Click-to-enlarge flyers (native <dialog>) ---------- */
+  function initLightbox() {
+    var dlg = null, img, cap, last = null;
+    function build() {
+      dlg = doc.createElement("dialog");
+      dlg.className = "lightbox";
+      dlg.setAttribute("aria-label", "Enlarged flyer");
+      dlg.innerHTML = '<button type="button" class="lb-close" aria-label="Close enlarged image">×</button><img class="lb-img" alt=""><p class="lb-cap"></p>';
+      doc.body.appendChild(dlg);
+      img = dlg.querySelector(".lb-img");
+      cap = dlg.querySelector(".lb-cap");
+      dlg.querySelector(".lb-close").addEventListener("click", function () { dlg.close(); });
+      /* a click on the dark backdrop reports the dialog itself as the target */
+      dlg.addEventListener("click", function (e) { if (e.target === dlg) dlg.close(); });
+      dlg.addEventListener("close", function () { if (last) last.focus(); });
+    }
+    doc.addEventListener("click", function (e) {
+      var b = e.target.closest ? e.target.closest("[data-zoom]") : null;
+      if (!b) return;
+      var thumb = b.querySelector("img");
+      if (!doc.createElement("dialog").showModal) { window.open(b.getAttribute("data-full"), "_blank", "noopener"); return; }
+      if (!dlg) build();
+      last = b;
+      img.src = b.getAttribute("data-full");
+      img.alt = thumb ? thumb.alt : "";
+      cap.textContent = thumb ? thumb.alt : "";
+      dlg.showModal();
+    });
   }
   function fileList(items) {
     return '<ul class="list">' + items.map(function (f) {
@@ -111,6 +183,10 @@
       var n = parseInt(el.getAttribute("data-limit"), 10) || 99;
       el.className = "grid wide";
       el.innerHTML = (DATA.events || []).slice(0, n).map(eventCard).join("");
+      /* Structured data only on the full list (events.html), so the home page does not repeat it */
+      if (!el.hasAttribute("data-limit")) {
+        addJsonLd({ "@context": "https://schema.org", "@graph": (DATA.events || []).filter(function (ev) { return ev.start; }).map(eventJsonLd) });
+      }
     },
     "event-series": function (el) {
       el.className = "grid";
@@ -190,4 +266,5 @@
   buildHeader();
   buildFooter();
   renderAll();
+  initLightbox();
 })();

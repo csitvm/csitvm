@@ -3,6 +3,7 @@
 window.CSI_SITE = {
   name: "Computer Society of India, Trivandrum Chapter",
   short: "CSI Trivandrum",
+  url: "https://csitvm.in",
   logo: "assets/img/csi-trivandrum-logo.png",
   /* Main navigation. href is relative to the site root. */
   nav: [

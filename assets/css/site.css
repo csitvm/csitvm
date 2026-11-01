@@ -159,3 +159,46 @@ footer.site{margin-top:72px;background:var(--card);border-top:1px solid var(--li
 
 /* Tiles stretch to fill the row, so a few tiles still span the full width */
 .grid.fit{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+
+/* ===================================================================
+   Modern CSS features. Each block degrades gracefully: browsers that do
+   not support a feature simply skip it and the page looks the same, minus the effect.
+   =================================================================== */
+
+/* 1. View Transitions: smooth cross-fade between pages (Chrome, Edge, Safari 18.2+). The header stays put. */
+@media (prefers-reduced-motion:no-preference){
+  @view-transition{navigation:auto}
+  header.site{view-transition-name:site-header}
+  ::view-transition-old(root),::view-transition-new(root){animation-duration:.2s}
+}
+
+/* 2. Scroll-driven animation: cards, tiles and rows fade and rise as they scroll into view */
+@media (prefers-reduced-motion:no-preference){
+  @supports (animation-timeline:view()){
+    @keyframes reveal{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+    .grid > *,.stats li,.list li,.banner,.split > *{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
+  }
+}
+
+/* 3. Click-to-enlarge flyers: the thumbnail is a button, the enlarged view is a native <dialog> (built in site.js) */
+.zoom{display:block;width:100%;padding:0;margin:0;border:0;background:none;color:inherit;cursor:zoom-in;border-radius:12px}
+.zoom picture{display:block}
+.zoom img{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line)}
+dialog.lightbox{padding:0;border:0;border-radius:16px;background:var(--card);color:var(--ink);max-width:min(96vw,1000px);max-height:96vh;overflow:auto;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+dialog.lightbox::backdrop{background:rgba(8,12,24,.78)}
+dialog.lightbox[open]{animation:lb-in .18s ease-out}
+@keyframes lb-in{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+.lb-img{display:block;max-width:100%;max-height:78vh;width:auto;height:auto;margin:0 auto}
+.lb-cap{margin:0;padding:12px 64px 16px 18px;font-size:.95rem;color:var(--muted)}
+.lb-close{position:absolute;top:8px;right:8px;width:44px;height:44px;border-radius:50%;border:0;background:var(--brand);color:var(--on-brand);font-size:1.7rem;line-height:1;cursor:pointer}
+body:has(dialog[open]){overflow:hidden}
+
+/* 4. Container queries: an event card lays itself out by its own width, not the screen width.
+      Narrow card: flyer above the text. Wide card: flyer on the left, text on the right. */
+.card.event{container-type:inline-size}
+.ev-layout{display:grid;gap:12px}
+.ev-body h3{margin-top:4px}
+@container (min-width:640px){
+  .ev-layout{grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:24px;align-items:start}
+  .ev-body h3{margin-top:0}
+}

@@ -25,7 +25,7 @@ CLAUDE.md                     Notes for future editing sessions
 | --- | --- |
 | Change address, phone, email, social links, footer links, menu items | `data/site.js` |
 | Add a student chapter tile | `data/content.js`, `studentChapters` list |
-| Add an event | `data/content.js`, `events` list (add the poster to `assets/img`) |
+| Add an event | `data/content.js`, `events` list. The flyer must first be converted to AVIF and WebP in 3 widths (see CLAUDE.md, "Images"); ask Claude to do this or use squoosh.app |
 | Add a newsletter or form | `data/content.js`, `newsletters` or `forms` list (add the PDF to `assets/docs`) |
 | Add office bearers for a new year | `data/office-bearers.js`, add a row at the END |
 | Change colours, fonts, spacing | Tokens at the top of `assets/css/site.css` |

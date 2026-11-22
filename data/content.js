@@ -84,6 +84,12 @@ window.CSI_CONTENT = {
     { college: "Rajadhani Institute of Engineering and Technology", href: "https://www.riet.net.in/csi" },
     { college: "SCT College of Engineering", href: "https://www.sctce.ac.in/csi-cs.php", note: "CSI page on the college website" },
     { college: "UKF College of Engineering and Technology", href: "https://www.ukfcet.ac.in/csi.php", note: "CSI page on the college website" },
+    { college: "TKM Institute of Technology", href: "https://tkmit.ac.in/professional-societies", note: "Professional societies page on the college website" },
+    { college: "TKM College of Engineering", href: "https://www.instagram.com/csi_tkmce/", note: "CSI student chapter on Instagram" },
+    { college: "St. Thomas College of Engineering and Technology", href: "https://www.stthomaskannur.ac.in/stm2/activity?code=csi", note: "CSI activity page on the college website" },
+    { college: "College of Engineering Pathanapuram", href: "https://www.cepathanapuram.ac.in/cse", note: "Computer Science department page on the college website" },
+    { college: "St. Xavier's Catholic College of Engineering", href: "https://www.sxcce.edu.in/web2/cells/professional%20cells/CSI/csi.php", note: "CSI page on the college website" },
+    { college: "Mohandas College of Engineering and Technology", href: "https://mcet.ac.in/computer-society-of-india/", note: "Computer Society of India page on the college website" },
     /* No href yet: the tile is shown without a link. Add href: "https://..." when the chapter's website is known. */
     { college: "John Cox Memorial CSI Institute of Technology" },
     { college: "Lourdes Matha College of Science and Technology" },

@@ -209,7 +209,7 @@
         return x !== y ? x - y : a.localeCompare(b);
       });
       function tile(s) {
-        var loc = s.district ? '<p class="loc">' + esc(s.district) + " district, " + esc(s.state || "") + "</p>" : "";
+        var loc = "";
         /* No website known yet: show the college as a plain tile without a link */
         if (!s.href) {
           return '<div class="card"><span class="pill">' + esc(s.label || "CSI Student Chapter") + '</span><h5 class="mt-12">' + esc(s.college) + "</h5>" + loc +

@@ -76,26 +76,26 @@ window.CSI_CONTENT = {
     }
   ],
   /* CSI student chapters in colleges. To add a tile, copy a line and edit it. href must be https:// */
-  studentChapters: [
-    { college: "Government Engineering College, Barton Hill", href: "https://csigecbh.in" },
-    { college: "Mar Baselios College of Engineering and Technology", href: "https://csi-sb-mbcet.vercel.app" },
-    { college: "Amrita Vishwa Vidyapeetham, Nagercoil Campus", href: "https://www.amrita.edu/campus/nagercoil/professional-society-student-clubs/csi-student-chapter/", note: "CSI Student Chapter page on the Amrita website" },
-    { college: "College of Engineering, Perumon", href: "https://www.perumonec.ac.in/pages/facilities/professional-bodies.php", note: "Professional bodies page on the college website" },
-    { college: "Rajadhani Institute of Engineering and Technology", href: "https://www.riet.net.in/csi" },
-    { college: "SCT College of Engineering", href: "https://www.sctce.ac.in/csi-cs.php", note: "CSI page on the college website" },
-    { college: "UKF College of Engineering and Technology", href: "https://www.ukfcet.ac.in/csi.php", note: "CSI page on the college website" },
-    { college: "TKM Institute of Technology", href: "https://tkmit.ac.in/professional-societies", note: "Professional societies page on the college website" },
-    { college: "TKM College of Engineering", href: "https://www.instagram.com/csi_tkmce/", note: "CSI student chapter on Instagram" },
-    { college: "St. Thomas College of Engineering and Technology", href: "https://www.stthomaskannur.ac.in/stm2/activity?code=csi", note: "CSI activity page on the college website" },
-    { college: "College of Engineering Pathanapuram", href: "https://www.cepathanapuram.ac.in/cse", note: "Computer Science department page on the college website" },
-    { college: "St. Xavier's Catholic College of Engineering", href: "https://www.sxcce.edu.in/web2/cells/professional%20cells/CSI/csi.php", note: "CSI page on the college website" },
-    { college: "Mohandas College of Engineering and Technology", href: "https://mcet.ac.in/computer-society-of-india/", note: "Computer Society of India page on the college website" },
+  studentChapters: [ /* each entry: college, district, state (used for grouping), href, note, label */
+    { college: "Government Engineering College, Barton Hill", district: "Thiruvananthapuram", state: "Kerala", href: "https://csigecbh.in" },
+    { college: "Mar Baselios College of Engineering and Technology", district: "Thiruvananthapuram", state: "Kerala", href: "https://csi-sb-mbcet.vercel.app" },
+    { college: "Amrita Vishwa Vidyapeetham, Nagercoil Campus", district: "Kanyakumari", state: "Tamil Nadu", href: "https://www.amrita.edu/campus/nagercoil/professional-society-student-clubs/csi-student-chapter/", note: "CSI Student Chapter page on the Amrita website" },
+    { college: "College of Engineering, Perumon", district: "Kollam", state: "Kerala", href: "https://www.perumonec.ac.in/pages/facilities/professional-bodies.php", note: "Professional bodies page on the college website" },
+    { college: "Rajadhani Institute of Engineering and Technology", district: "Thiruvananthapuram", state: "Kerala", href: "https://www.riet.net.in/csi" },
+    { college: "SCT College of Engineering", district: "Thiruvananthapuram", state: "Kerala", href: "https://www.sctce.ac.in/csi-cs.php", note: "CSI page on the college website" },
+    { college: "UKF College of Engineering and Technology", district: "Kollam", state: "Kerala", href: "https://www.ukfcet.ac.in/csi.php", note: "CSI page on the college website" },
+    { college: "TKM Institute of Technology", district: "Kollam", state: "Kerala", href: "https://tkmit.ac.in/professional-societies", note: "Professional societies page on the college website" },
+    { college: "TKM College of Engineering", district: "Kollam", state: "Kerala", href: "https://www.instagram.com/csi_tkmce/", note: "CSI student chapter on Instagram" },
+    { college: "St. Thomas College of Engineering and Technology", district: "Kannur", state: "Kerala", href: "https://www.stthomaskannur.ac.in/stm2/activity?code=csi", note: "CSI activity page on the college website" },
+    { college: "College of Engineering Pathanapuram", district: "Kollam", state: "Kerala", href: "https://www.cepathanapuram.ac.in/cse", note: "Computer Science department page on the college website" },
+    { college: "St. Xavier's Catholic College of Engineering", district: "Kanyakumari", state: "Tamil Nadu", href: "https://www.sxcce.edu.in/web2/cells/professional%20cells/CSI/csi.php", note: "CSI page on the college website" },
+    { college: "Mohandas College of Engineering and Technology", district: "Thiruvananthapuram", state: "Kerala", href: "https://mcet.ac.in/computer-society-of-india/", note: "Computer Society of India page on the college website" },
     /* No href yet: the tile is shown without a link. Add href: "https://..." when the chapter's website is known. */
-    { college: "John Cox Memorial CSI Institute of Technology" },
-    { college: "Lourdes Matha College of Science and Technology" },
-    { college: "College of Engineering, Muttathara" },
+    { college: "John Cox Memorial CSI Institute of Technology", district: "Thiruvananthapuram", state: "Kerala" },
+    { college: "Lourdes Matha College of Science and Technology", district: "Thiruvananthapuram", state: "Kerala" },
+    { college: "College of Engineering, Muttathara", district: "Thiruvananthapuram", state: "Kerala" },
     /* label overrides the first line of the tile (default: "CSI Student Chapter") */
-    { college: "Christ Nagar College, Maranalloor, Thiruvananthapuram", label: "CSI Institutional Member" }
+    { college: "Christ Nagar College, Maranalloor, Thiruvananthapuram", district: "Thiruvananthapuram", state: "Kerala", label: "CSI Institutional Member" }
   ],
   awards: [
     { title: "CSI-InApp Award", text: "An award programme linked from the old chapter website.", href: "https://csiawards.inapp.in/" }

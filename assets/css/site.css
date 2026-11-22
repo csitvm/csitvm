@@ -202,3 +202,49 @@ body:has(dialog[open]){overflow:hidden}
   .ev-layout{grid-template-columns:minmax(0,280px) minmax(0,1fr);gap:24px;align-items:start}
   .ev-body h3{margin-top:0}
 }
+
+/* ===================================================================
+   Menu and page motion (added after review: the first version had only a 0.2s page fade and no menu motion).
+   Everything below is switched off for visitors who prefer reduced motion.
+   =================================================================== */
+@media (prefers-reduced-motion:no-preference){
+  /* 1. Page-to-page: a clearly visible cross-fade with a slight rise; the header stays in place (cross-document View Transitions) */
+  @view-transition{navigation:auto}
+  header.site{view-transition-name:site-header}
+  main{view-transition-name:page-main}
+  ::view-transition-group(root){animation-duration:.4s}
+  ::view-transition-old(page-main){animation:vt-out .22s ease-in both}
+  ::view-transition-new(page-main){animation:vt-in .38s cubic-bezier(.2,.7,.2,1) .06s both}
+  @keyframes vt-out{to{opacity:0;transform:translateY(-8px)}}
+  @keyframes vt-in{from{opacity:0;transform:translateY(14px)}}
+
+  /* 2. Desktop menu: smooth hover, focus and current-page changes */
+  nav.main a{transition:background-color .22s ease,color .22s ease,box-shadow .22s ease,transform .22s ease}
+  nav.main a:hover{transform:translateY(-1px)}
+  nav.main a[aria-current=page]{box-shadow:0 2px 8px rgba(0,0,0,.18)}
+  .theme,.menu-btn,.btn{transition:background-color .22s ease,border-color .22s ease,transform .15s ease,opacity .2s ease}
+  .btn:active,.theme:active,.menu-btn:active{transform:scale(.97)}
+  .card.link{transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+  .card.link:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,.12)}
+
+  /* 3. Mobile menu: slides open instead of popping */
+  @media (max-width:1300px){
+    nav.main.open{animation:menu-open .28s cubic-bezier(.2,.7,.2,1) both;transform-origin:top}
+    nav.main.open a{animation:menu-item .3s ease both}
+    nav.main.open a:nth-child(2){animation-delay:.03s}
+    nav.main.open a:nth-child(3){animation-delay:.06s}
+    nav.main.open a:nth-child(4){animation-delay:.09s}
+    nav.main.open a:nth-child(5){animation-delay:.12s}
+    nav.main.open a:nth-child(6){animation-delay:.15s}
+    nav.main.open a:nth-child(7){animation-delay:.18s}
+    nav.main.open a:nth-child(8){animation-delay:.21s}
+  }
+  @keyframes menu-open{from{opacity:0;transform:translateY(-10px) scaleY(.96)}}
+  @keyframes menu-item{from{opacity:0;transform:translateX(-10px)}}
+}
+
+/* Student chapters grouped by state and district */
+h5{font-size:1.2rem;margin:0 0 4px}
+h2.state{font-size:1.5rem;border-bottom:2px solid var(--brand);padding-bottom:6px;margin:32px 0 12px}h2.state:first-child{margin-top:0}
+h4.district{font-size:1.15rem;color:var(--brand);margin:20px 0 10px}
+.card .loc{font-size:.92rem;font-weight:600;margin:2px 0 8px}

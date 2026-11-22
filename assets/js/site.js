@@ -198,17 +198,34 @@
       }).join("");
     },
     "student-chapters": function (el) {
-      el.className = "grid fit";
-      el.innerHTML = (DATA.studentChapters || []).map(function (s) {
+      /* Group by state, then district (Tamil Nadu first, then Kerala, then other states A-Z; districts A-Z). Entries keep their order inside a district. */
+      var list = DATA.studentChapters || [], states = {};
+      list.forEach(function (s) {
+        var st = s.state || "Other", di = s.district || "Other";
+        (states[st] = states[st] || {})[di] = (states[st][di] || []).concat([s]);
+      });
+      var names = Object.keys(states).sort(function (a, b) {
+        var r = { "Tamil Nadu": 0, "Kerala": 1 }, x = r[a] === undefined ? 2 : r[a], y = r[b] === undefined ? 2 : r[b];
+        return x !== y ? x - y : a.localeCompare(b);
+      });
+      function tile(s) {
+        var loc = s.district ? '<p class="loc">' + esc(s.district) + " district, " + esc(s.state || "") + "</p>" : "";
         /* No website known yet: show the college as a plain tile without a link */
         if (!s.href) {
-          return '<div class="card"><span class="pill">' + esc(s.label || "CSI Student Chapter") + '</span><h3 class="mt-12">' + esc(s.college) + "</h3>" +
+          return '<div class="card"><span class="pill">' + esc(s.label || "CSI Student Chapter") + '</span><h5 class="mt-12">' + esc(s.college) + "</h5>" + loc +
             '<p class="empty">' + esc(s.note || "Website not listed yet") + "</p></div>";
         }
         var host = String(s.href).replace(/^https?:\/\//i, "").split("/")[0];
-        return '<a class="card link" href="' + esc(safe(s.href)) + '"' + ext(s.href) + ' aria-label="' + esc(s.college) + ' website (opens in a new tab)">' +
-          '<span class="pill">' + esc(s.label || "CSI Student Chapter") + '</span><h3 class="mt-12">' + esc(s.college) + "</h3>" +
+        return '<a class="card link" href="' + esc(safe(s.href)) + '"' + ext(s.href) + ' aria-label="' + esc(s.college) + (s.district ? ", " + esc(s.district) + " district" : "") + ' website (opens in a new tab)">' +
+          '<span class="pill">' + esc(s.label || "CSI Student Chapter") + '</span><h5 class="mt-12">' + esc(s.college) + "</h5>" + loc +
           "<p>" + esc(s.note || host) + '</p><span class="go">Visit website →</span></a>';
+      }
+      el.className = "";
+      el.innerHTML = names.map(function (st) {
+        var ds = Object.keys(states[st]).sort(function (a, b) { return a.localeCompare(b); });
+        return '<h2 class="state">' + esc(st) + "</h2>" + ds.map(function (d) {
+          return '<h4 class="district">' + esc(d) + " district</h4><div class=\"grid fit\">" + states[st][d].map(tile).join("") + "</div>";
+        }).join("");
       }).join("");
     },
     awards: function (el) {
